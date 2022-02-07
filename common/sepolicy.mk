@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from PixelExperience
+# inherit from DoraemonOS
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -10,26 +10,26 @@ endif
 endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/custom/sepolicy/common/public
+    device/dora/sepolicy/common/public
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/custom/sepolicy/common/private
+    device/dora/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/custom/sepolicy/common/dynamic \
-    device/custom/sepolicy/common/system
+    device/dora/sepolicy/common/dynamic \
+    device/dora/sepolicy/common/system
 
 ifneq ($(TARGET_HAL_POWER_RW_INPUT_DEVICE), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/custom/sepolicy/common/dynamic_extra
+    device/dora/sepolicy/common/dynamic_extra
 endif
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/custom/sepolicy/common/dynamic \
-    device/custom/sepolicy/common/dynamic_extra \
-    device/custom/sepolicy/common/vendor
+    device/dora/sepolicy/common/dynamic \
+    device/dora/sepolicy/common/dynamic_extra \
+    device/dora/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/custom/sepolicy/legacy-common/sepolicy.mk
+-include device/dora/sepolicy/legacy-common/sepolicy.mk

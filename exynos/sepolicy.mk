@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all exynos products
-# that inherit from PixelExperience
+# that inherit from DoraemonOS
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -10,14 +10,14 @@ endif
 endif
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/custom/sepolicy/exynos/private
+    device/dora/sepolicy/exynos/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/custom/sepolicy/exynos/dynamic \
-    device/custom/sepolicy/exynos/system
+    device/dora/sepolicy/exynos/dynamic \
+    device/dora/sepolicy/exynos/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/custom/sepolicy/exynos/dynamic \
-    device/custom/sepolicy/exynos/vendor
+    device/dora/sepolicy/exynos/dynamic \
+    device/dora/sepolicy/exynos/vendor
 endif
